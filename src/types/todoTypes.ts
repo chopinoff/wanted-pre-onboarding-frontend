@@ -1,5 +1,5 @@
 interface TodosPayload {
-  todo: string;
+  todo?: string;
   isCompleted?: boolean;
   id?: number;
 }
