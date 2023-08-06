@@ -1,11 +1,7 @@
 import defaultAxios from '../instance';
+import { authPayloadType } from '../../types/authTypes';
 
-type postSignUpPayloadType = {
-  email: string;
-  password: string;
-};
-
-async function postSignUp({ email, password }: postSignUpPayloadType) {
+async function postSignUp({ email, password }: authPayloadType) {
   try {
     const res = await defaultAxios.post('/auth/signup', {
       email,
