@@ -1,8 +1,7 @@
 import { FormEvent } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import useInputValidation from '../hooks/useInputValidation';
-import postSignUp from '../api/auth/postSignUp';
-import postSignIn from '../api/auth/postSignIn';
+import { authPayloadType } from '../types/authTypes';
 
 type InputObjectType = {
   value: string;
@@ -10,9 +9,12 @@ type InputObjectType = {
   hasChanged: boolean;
 };
 
-function EmailPasswordForm() {
+type PropsType = {
+  handleAuth: ({ email, password }: authPayloadType) => Promise<void>;
+};
+
+function EmailPasswordForm({ handleAuth }: PropsType) {
   const location = useLocation();
-  const navigate = useNavigate();
   const pathname = location.pathname;
   const email = useInputValidation('', 'email');
   const password = useInputValidation('', 'password');
@@ -35,14 +37,7 @@ function EmailPasswordForm() {
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const payload = { email: email.value, password: password.value };
-    if (pathname === '/signup') {
-      const signUpRes = await postSignUp(payload);
-      if (signUpRes) navigate('/signin');
-    } else {
-      const signInRes = await postSignIn(payload);
-      if (signInRes) navigate('/todo');
-    }
+    handleAuth({ email: email.value, password: password.value });
   }
 
   return (
