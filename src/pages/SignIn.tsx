@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import EmailPasswordForm from '../components/EmailPasswordForm';
+import EmailPasswordForm from '../components/auth/EmailPasswordForm';
 import postSignIn from '../api/auth/postSignIn';
 import { AuthPayload } from '../types/authTypes';
 
