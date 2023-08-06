@@ -1,4 +1,4 @@
-import defaultAxios from './instance';
+import defaultAxios from '../instance';
 
 type postSignUpPayloadType = {
   email: string;

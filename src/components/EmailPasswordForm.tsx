@@ -1,8 +1,8 @@
 import { FormEvent } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useInputValidation from '../hooks/useInputValidation';
-import postSignUp from '../api/postSignUp';
-import postSignIn from '../api/postSignIn';
+import postSignUp from '../api/auth/postSignUp';
+import postSignIn from '../api/auth/postSignIn';
 
 type InputObjectType = {
   value: string;
