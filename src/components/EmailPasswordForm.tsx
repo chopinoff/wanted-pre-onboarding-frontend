@@ -2,6 +2,7 @@ import { FormEvent } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useInputValidation from '../hooks/useInputValidation';
 import postSignUp from '../api/postSignUp';
+import postSignIn from '../api/postSignIn';
 
 type InputObjectType = {
   value: string;
@@ -32,9 +33,16 @@ function EmailPasswordForm() {
     }
   }
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    postSignUp({ email: email.value, password: password.value }).then(() => navigate('/'));
+    const payload = { email: email.value, password: password.value };
+    if (pathname === '/signup') {
+      const signUpRes = await postSignUp(payload);
+      if (signUpRes) navigate('/');
+    } else {
+      const signInRes = await postSignIn(payload);
+      if (signInRes) navigate('/todo');
+    }
   }
 
   return (
