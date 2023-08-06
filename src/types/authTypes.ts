@@ -1,6 +1,6 @@
-type authPayloadType = {
+interface AuthPayload {
   email: string;
   password: string;
-};
+}
 
-export type { authPayloadType };
+export type { AuthPayload };

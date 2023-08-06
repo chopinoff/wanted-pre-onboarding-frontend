@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import EmailPasswordForm from '../components/EmailPasswordForm';
 import postSignUp from '../api/auth/postSignUp';
-import { authPayloadType } from '../types/authTypes';
+import { AuthPayload } from '../types/authTypes';
 
 function SignUp() {
   const navigate = useNavigate();
 
-  async function handleSignUp({ email, password }: authPayloadType) {
+  async function handleSignUp({ email, password }: AuthPayload) {
     const data = await postSignUp({ email, password });
     data !== null && navigate('/signin');
   }

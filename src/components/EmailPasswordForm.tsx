@@ -1,7 +1,7 @@
 import { FormEvent } from 'react';
 import { useLocation } from 'react-router-dom';
 import useInputValidation from '../hooks/useInputValidation';
-import { authPayloadType } from '../types/authTypes';
+import { AuthPayload } from '../types/authTypes';
 
 type InputObjectType = {
   value: string;
@@ -10,7 +10,7 @@ type InputObjectType = {
 };
 
 type PropsType = {
-  handleAuth: ({ email, password }: authPayloadType) => Promise<void>;
+  handleAuth: ({ email, password }: AuthPayload) => Promise<void>;
 };
 
 function EmailPasswordForm({ handleAuth }: PropsType) {

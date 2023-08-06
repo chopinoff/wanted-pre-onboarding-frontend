@@ -1,7 +1,7 @@
 import axios from '../instance';
-import { authPayloadType } from '../../types/authTypes';
+import { AuthPayload } from '../../types/authTypes';
 
-async function postSignUp({ email, password }: authPayloadType) {
+async function postSignUp({ email, password }: AuthPayload) {
   try {
     const { data } = await axios.post('/auth/signup', {
       email,
