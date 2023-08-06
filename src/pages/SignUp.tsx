@@ -7,8 +7,8 @@ function SignUp() {
   const navigate = useNavigate();
 
   async function handleSignUp({ email, password }: authPayloadType) {
-    const signUpRes = await postSignUp({ email, password });
-    if (signUpRes) navigate('/signin');
+    const data = await postSignUp({ email, password });
+    data !== null && navigate('/signin');
   }
 
   return (

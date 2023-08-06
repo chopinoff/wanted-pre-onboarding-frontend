@@ -7,8 +7,8 @@ function SignIn() {
   const navigate = useNavigate();
 
   async function handleSignIn({ email, password }: authPayloadType) {
-    const signInRes = await postSignIn({ email, password });
-    if (signInRes) navigate('/todo');
+    const data = await postSignIn({ email, password });
+    data !== null && navigate('/todo');
   }
 
   return (
