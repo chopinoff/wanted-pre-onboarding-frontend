@@ -38,7 +38,7 @@ function EmailPasswordForm() {
     const payload = { email: email.value, password: password.value };
     if (pathname === '/signup') {
       const signUpRes = await postSignUp(payload);
-      if (signUpRes) navigate('/');
+      if (signUpRes) navigate('/signin');
     } else {
       const signInRes = await postSignIn(payload);
       if (signInRes) navigate('/todo');

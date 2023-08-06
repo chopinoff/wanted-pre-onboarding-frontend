@@ -12,11 +12,10 @@ async function postSignUp({ email, password }: postSignUpPayloadType) {
       password,
     });
     alert('회원가입이 완료되었습니다.');
-    return res;
+    return res.data;
   } catch (err) {
     alert('회원가입이 정상적으로 완료되지 않았습니다. 다시 시도해주세요.');
-    console.log('Error in postSignUp:', err);
-    throw err;
+    return null;
   }
 }
 
