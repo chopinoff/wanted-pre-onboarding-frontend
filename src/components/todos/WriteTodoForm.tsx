@@ -1,7 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import postTodos from '../../api/todos/postTodos';
 
-function CreateTodoForm() {
+function WriteTodoForm() {
   const [todo, setTodo] = useState('');
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
@@ -25,4 +25,4 @@ function CreateTodoForm() {
   );
 }
 
-export default CreateTodoForm;
+export default WriteTodoForm;
