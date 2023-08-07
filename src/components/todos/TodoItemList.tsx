@@ -13,7 +13,7 @@ function TodoItemList() {
 
   useEffect(() => {
     getTodoList();
-  });
+  }, []);
 
   return (
     <ul>
