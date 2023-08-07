@@ -3,7 +3,7 @@ import { TodosPayload } from '../../types/todoTypes';
 
 async function postTodos({ todo }: TodosPayload) {
   try {
-    const { data } = await axios.post('/todos', {
+    const { data } = await axios().post('/todos', {
       todo,
     });
     return data;

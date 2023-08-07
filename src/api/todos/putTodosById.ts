@@ -3,7 +3,7 @@ import { TodosPayload } from '../../types/todoTypes';
 
 async function putTodosById({ id, todo, isCompleted }: TodosPayload) {
   try {
-    const { data } = await axios.put(`/todos/${id}`, {
+    const { data } = await axios().put(`/todos/${id}`, {
       todo,
       isCompleted,
     });
