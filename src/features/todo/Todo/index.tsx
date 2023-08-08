@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import TodoCreate from 'components/todo/TodoCreate';
-import TodoHeader from 'components/todo/TodoHeader';
-import TodoList from 'components/todo/TodoList';
+import TodoCreate from './components/TodoCreate';
+import TodoHeader from './components/TodoHeader';
+import TodoList from './components/TodoList';
 import getTodos from 'api/todo/getTodos';
 import { TodosResult } from 'types/todoTypes';
 
@@ -30,15 +30,11 @@ function Todo() {
   }, [navigate, accessToken]);
 
   return (
-    <>
-      {accessToken && (
-        <div>
-          <TodoHeader />
-          <TodoCreate {...{ getTodoList }} />
-          <TodoList {...{ getTodoList, todoList }} />
-        </div>
-      )}
-    </>
+    <div>
+      <TodoHeader />
+      <TodoCreate {...{ getTodoList }} />
+      <TodoList {...{ getTodoList, todoList }} />
+    </div>
   );
 }
 

@@ -1,17 +1,17 @@
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import SignUp from './pages/SignUp';
-import SignIn from './pages/SignIn';
-import Todo from './pages/Todo';
+import PageHome from './pages/PageHome';
+import PageSignUp from './pages/PageSignUp';
+import PageSignIn from './pages/PageSignIn';
+import PageTodo from './pages/PageTodo';
 
 function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/todo" element={<Todo />} />
+        <Route path="/" element={<PageHome />} />
+        <Route path="/signup" element={<PageSignUp />} />
+        <Route path="/signin" element={<PageSignIn />} />
+        <Route path="/todo" element={<PageTodo />} />
       </Routes>
     </div>
   );

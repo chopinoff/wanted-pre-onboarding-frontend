@@ -20,7 +20,7 @@ function TodoItem({ id, todo, isCompleted: initialIsCompleted, getTodoList }: Pr
 
   return (
     <li>
-      <input type="checkbox" id="checkbox" onChange={handleClickCheckbox} />
+      <input type="checkbox" id={`checkbox-${id}`} checked={isCompleted} onChange={handleClickCheckbox} />
       {isModifying ? (
         <TodoUpdate {...{ id, todo, isCompleted, getTodoList, setIsModifying }} />
       ) : (

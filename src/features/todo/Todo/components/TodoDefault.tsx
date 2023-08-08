@@ -18,15 +18,15 @@ function TodoDefault({ id, todo, getTodoList, setIsModifying }: Props) {
   }
 
   return (
-    <label htmlFor="checkbox">
-      <span>{todo}</span>
+    <>
+      <label htmlFor="checkbox">{todo}</label>
       <button data-testid="modify-button" type="button" onClick={handleClickModify}>
         수정
       </button>
       <button data-testid="delete-button" type="button" onClick={handleClickDelete}>
         삭제
       </button>
-    </label>
+    </>
   );
 }
 export default TodoDefault;

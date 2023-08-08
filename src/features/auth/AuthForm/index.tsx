@@ -1,17 +1,17 @@
 import { FormEvent } from 'react';
 import { useLocation } from 'react-router-dom';
-import useAuthValidation from 'hooks/useAuthValidation';
+import useAuthValidation from './hooks/useAuthValidation';
 import { AuthPayload } from 'types/authTypes';
 
-type InputObjectType = {
+interface InputObjectType {
   value: string;
   isValid: boolean;
   hasChanged: boolean;
-};
+}
 
-type PropsType = {
+interface PropsType {
   handleAuth: ({ email, password }: AuthPayload) => Promise<void>;
-};
+}
 
 function AuthForm({ handleAuth }: PropsType) {
   const location = useLocation();
