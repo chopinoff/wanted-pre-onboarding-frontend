@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import WriteTodoForm from '../components/todos/WriteTodoForm';
 import TodoItemList from '../components/todos/TodoItemList';
@@ -10,12 +10,12 @@ function Todo() {
   const navigate = useNavigate();
   const [todoList, setTodoList] = useState<TodosResult[] | undefined>();
 
-  async function getTodoList() {
+  const getTodoList = useCallback(async () => {
     const data = await getTodos();
     if (data !== null) {
       setTodoList(data);
     }
-  }
+  }, []);
 
   useEffect(() => {
     getTodoList();
