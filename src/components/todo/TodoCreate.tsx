@@ -1,5 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
-import createTodo from '../../api/todo/createTodo';
+import createTodo from 'api/todo/createTodo';
 
 interface Props {
   getTodoList: () => Promise<void>;

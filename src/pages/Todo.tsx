@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import TodoCreate from '../components/todo/TodoCreate';
-import TodoHeader from '../components/todo/TodoHeader';
-import TodoList from '../components/todo/TodoList';
-import getTodos from '../api/todo/getTodos';
-import { TodosResult } from '../types/todoTypes';
+import TodoCreate from 'components/todo/TodoCreate';
+import TodoHeader from 'components/todo/TodoHeader';
+import TodoList from 'components/todo/TodoList';
+import getTodos from 'api/todo/getTodos';
+import { TodosResult } from 'types/todoTypes';
 
 function Todo() {
   const accessToken = window.localStorage.getItem('accessToken');

@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
-import { TodosResult } from '../../types/todoTypes';
-import deleteTodoById from '../../api/todo/deleteTodoById';
+import { TodosResult } from 'types/todoTypes';
+import deleteTodoById from 'api/todo/deleteTodoById';
 
 interface Props extends TodosResult {
   getTodoList: () => Promise<void>;

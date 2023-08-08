@@ -1,5 +1,5 @@
 import TodoItem from './TodoItem';
-import { TodosResult } from '../../types/todoTypes';
+import { TodosResult } from 'types/todoTypes';
 
 interface Props {
   todoList: TodosResult[] | undefined;

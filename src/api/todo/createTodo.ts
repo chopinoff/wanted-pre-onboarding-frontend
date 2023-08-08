@@ -1,5 +1,5 @@
-import axios from '../instance';
-import { TodosPayload } from '../../types/todoTypes';
+import axios from 'api/instance';
+import { TodosPayload } from 'types/todoTypes';
 
 async function createTodo({ todo }: TodosPayload) {
   try {

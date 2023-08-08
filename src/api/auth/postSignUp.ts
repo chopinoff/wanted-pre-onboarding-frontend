@@ -1,5 +1,5 @@
-import axios from '../instance';
-import { AuthPayload } from '../../types/authTypes';
+import axios from 'api/instance';
+import { AuthPayload } from 'types/authTypes';
 
 async function postSignUp({ email, password }: AuthPayload) {
   try {

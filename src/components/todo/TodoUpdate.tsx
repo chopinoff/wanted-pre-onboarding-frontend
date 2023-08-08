@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
-import { TodosResult } from '../../types/todoTypes';
-import updateTodoById from '../../api/todo/updateTodoById';
+import { TodosResult } from 'types/todoTypes';
+import updateTodoById from 'api/todo/updateTodoById';
 
 interface Props extends TodosResult {
   getTodoList: () => Promise<void>;

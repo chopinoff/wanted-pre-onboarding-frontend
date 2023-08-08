@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AuthForm from '../components/auth/AuthForm';
-import postSignIn from '../api/auth/postSignIn';
-import { AuthPayload } from '../types/authTypes';
+import AuthForm from 'components/auth/AuthForm';
+import postSignIn from 'api/auth/postSignIn';
+import { AuthPayload } from 'types/authTypes';
 
 function SignIn() {
   const navigate = useNavigate();

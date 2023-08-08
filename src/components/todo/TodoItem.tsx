@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react';
-import updateTodoById from '../../api/todo/updateTodoById';
-import { TodosResult } from '../../types/todoTypes';
+import updateTodoById from 'api/todo/updateTodoById';
+import { TodosResult } from 'types/todoTypes';
 import TodoDefault from './TodoDefault';
 import TodoUpdate from './TodoUpdate';
 

@@ -1,4 +1,4 @@
-import axios from '../instance';
+import axios from 'api/instance';
 
 async function getTodos() {
   try {
