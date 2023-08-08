@@ -4,7 +4,7 @@ function global() {
   return css`
     * {
       font-family: 'SUIT' !important;
-      font-size: 24px !important;
+      font-size: 18px !important;
       font-weight: 400 !important;
     }
 
