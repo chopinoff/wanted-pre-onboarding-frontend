@@ -3,10 +3,11 @@ import { TodosResult } from '../../types/todoTypes';
 import putTodosById from '../../api/todos/putTodosById';
 
 interface Props extends TodosResult {
+  handleTodoList: () => Promise<void>;
   handleIsModifying: Dispatch<SetStateAction<boolean>>;
 }
 
-function ModifyTodoForm({ id, todo: initialTodo, isCompleted, handleIsModifying }: Props) {
+function ModifyTodoForm({ id, todo: initialTodo, isCompleted, handleTodoList, handleIsModifying }: Props) {
   const [todo, setTodo] = useState(initialTodo);
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
@@ -14,10 +15,11 @@ function ModifyTodoForm({ id, todo: initialTodo, isCompleted, handleIsModifying 
     setTodo(value);
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    todo && putTodosById({ id, todo, isCompleted });
+    todo && (await putTodosById({ id, todo, isCompleted }));
     setTodo('');
+    await handleTodoList();
     handleIsModifying(false);
   }
 

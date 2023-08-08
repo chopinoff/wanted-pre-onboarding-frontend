@@ -1,24 +1,16 @@
-import { useEffect, useState } from 'react';
 import TodoItem from './TodoItem';
-import getTodos from '../../api/todos/getTodos';
 import { TodosResult } from '../../types/todoTypes';
 
-function TodoItemList() {
-  const [todoList, setTodoList] = useState<TodosResult[] | undefined>();
+interface Props {
+  todoList: TodosResult[] | undefined;
+  handleTodoList: () => Promise<void>;
+}
 
-  async function getTodoList() {
-    const data = await getTodos();
-    data !== null && setTodoList(data);
-  }
-
-  useEffect(() => {
-    getTodoList();
-  }, []);
-
+function TodoItemList({ todoList, handleTodoList }: Props) {
   return (
     <ul>
-      {todoList?.map((todoItem) => (
-        <TodoItem key={todoItem.id} id={todoItem.id} todo={todoItem.todo} isCompleted={todoItem.isCompleted} />
+      {todoList?.map(({ id, todo, isCompleted }) => (
+        <TodoItem key={id} {...{ id, todo, isCompleted, handleTodoList }} />
       ))}
     </ul>
   );

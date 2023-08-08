@@ -4,7 +4,11 @@ import { TodosResult } from '../../types/todoTypes';
 import TodoItemView from './TodoItemView';
 import ModifyTodoForm from './ModifyTodoForm';
 
-function TodoItem({ id, todo, isCompleted }: TodosResult) {
+interface Props extends TodosResult {
+  handleTodoList: () => Promise<void>;
+}
+
+function TodoItem({ id, todo, isCompleted, handleTodoList }: Props) {
   const [isChecked, setIsChecked] = useState(isCompleted);
   const [isModifying, setIsModifying] = useState(false);
 
@@ -18,10 +22,10 @@ function TodoItem({ id, todo, isCompleted }: TodosResult) {
     <li>
       <input type="checkbox" id="completed-check-box" checked={isChecked} onChange={handleChange} />
       {isModifying ? (
-        <ModifyTodoForm id={id} todo={todo} isCompleted={isCompleted} handleIsModifying={setIsModifying} />
+        <ModifyTodoForm {...{ id, todo, isCompleted, handleTodoList, handleIsModifying: setIsModifying }} />
       ) : (
         <label htmlFor="completed-check-box">
-          <TodoItemView todo={todo} isCompleted={isCompleted} id={id} handleIsModifying={setIsModifying} />
+          <TodoItemView {...{ id, todo, isCompleted, handleTodoList, handleIsModifying: setIsModifying }} />
         </label>
       )}
     </li>

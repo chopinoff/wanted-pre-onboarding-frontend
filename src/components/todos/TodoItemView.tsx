@@ -3,12 +3,14 @@ import { TodosResult } from '../../types/todoTypes';
 import deleteTodosById from '../../api/todos/deleteTodosById';
 
 interface Props extends TodosResult {
+  handleTodoList: () => Promise<void>;
   handleIsModifying: Dispatch<SetStateAction<boolean>>;
 }
 
-function TodoItemView({ id, todo, handleIsModifying }: Props) {
-  function handleClickDelete() {
-    deleteTodosById({ id });
+function TodoItemView({ id, todo, handleTodoList, handleIsModifying }: Props) {
+  async function handleClickDelete() {
+    await deleteTodosById({ id });
+    handleTodoList();
   }
 
   function handleClickModify() {
