@@ -1,13 +1,13 @@
 import { useState, ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
 import { TodosResult } from '../../types/todoTypes';
-import putTodosById from '../../api/todos/putTodosById';
+import updateTodoById from '../../api/todo/updateTodoById';
 
 interface Props extends TodosResult {
-  handleTodoList: () => Promise<void>;
-  handleIsModifying: Dispatch<SetStateAction<boolean>>;
+  getTodoList: () => Promise<void>;
+  setIsModifying: Dispatch<SetStateAction<boolean>>;
 }
 
-function ModifyTodoForm({ id, todo: initialTodo, isCompleted, handleTodoList, handleIsModifying }: Props) {
+function TodoUpdate({ id, todo: initialTodo, isCompleted, getTodoList, setIsModifying }: Props) {
   const [todo, setTodo] = useState(initialTodo);
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
@@ -17,14 +17,14 @@ function ModifyTodoForm({ id, todo: initialTodo, isCompleted, handleTodoList, ha
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    todo && (await putTodosById({ id, todo, isCompleted }));
+    todo && (await updateTodoById({ id, todo, isCompleted }));
     setTodo('');
-    await handleTodoList();
-    handleIsModifying(false);
+    await getTodoList();
+    setIsModifying(false);
   }
 
   function handleClickCancle() {
-    handleIsModifying(false);
+    setIsModifying(false);
   }
 
   return (
@@ -42,4 +42,4 @@ function ModifyTodoForm({ id, todo: initialTodo, isCompleted, handleTodoList, ha
   );
 }
 
-export default ModifyTodoForm;
+export default TodoUpdate;

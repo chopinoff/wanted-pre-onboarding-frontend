@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import EmailPasswordForm from '../components/auth/EmailPasswordForm';
+import AuthForm from '../components/auth/AuthForm';
 import postSignIn from '../api/auth/postSignIn';
 import { AuthPayload } from '../types/authTypes';
 
@@ -17,7 +17,7 @@ function SignIn() {
     data !== null && navigate('/todo');
   }
 
-  return <div>{!accessToken && <EmailPasswordForm handleAuth={handleSignIn} />}</div>;
+  return <div>{!accessToken && <AuthForm handleAuth={handleSignIn} />}</div>;
 }
 
 export default SignIn;

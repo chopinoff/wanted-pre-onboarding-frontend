@@ -2,7 +2,7 @@ import { useState, useEffect, ChangeEvent } from 'react';
 
 type ValidationType = 'email' | 'password';
 
-function useInputValidation(initialValue: string, type: ValidationType) {
+function useAuthValidation(initialValue: string, type: ValidationType) {
   const [value, setValue] = useState(initialValue);
   const [isValid, setIsValid] = useState(false);
   const [hasChanged, setHasChanged] = useState(false);
@@ -30,4 +30,4 @@ function useInputValidation(initialValue: string, type: ValidationType) {
   return { value, isValid, hasChanged, handleChange };
 }
 
-export default useInputValidation;
+export default useAuthValidation;

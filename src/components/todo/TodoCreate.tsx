@@ -1,11 +1,11 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
-import postTodos from '../../api/todos/postTodos';
+import createTodo from '../../api/todo/createTodo';
 
 interface Props {
-  handleTodoList: () => Promise<void>;
+  getTodoList: () => Promise<void>;
 }
 
-function WriteTodoForm({ handleTodoList }: Props) {
+function TodoCreate({ getTodoList }: Props) {
   const [todo, setTodo] = useState('');
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
@@ -15,8 +15,8 @@ function WriteTodoForm({ handleTodoList }: Props) {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    todo && (await postTodos({ todo }));
-    handleTodoList();
+    todo && (await createTodo({ todo }));
+    getTodoList();
     setTodo('');
   }
 
@@ -30,4 +30,4 @@ function WriteTodoForm({ handleTodoList }: Props) {
   );
 }
 
-export default WriteTodoForm;
+export default TodoCreate;

@@ -1,6 +1,6 @@
 import { FormEvent } from 'react';
 import { useLocation } from 'react-router-dom';
-import useInputValidation from '../../hooks/useInputValidation';
+import useAuthValidation from '../../hooks/useAuthValidation';
 import { AuthPayload } from '../../types/authTypes';
 
 type InputObjectType = {
@@ -13,11 +13,11 @@ type PropsType = {
   handleAuth: ({ email, password }: AuthPayload) => Promise<void>;
 };
 
-function EmailPasswordForm({ handleAuth }: PropsType) {
+function AuthForm({ handleAuth }: PropsType) {
   const location = useLocation();
   const pathname = location.pathname;
-  const email = useInputValidation('', 'email');
-  const password = useInputValidation('', 'password');
+  const email = useAuthValidation('', 'email');
+  const password = useAuthValidation('', 'password');
 
   function handleWarning(inputObject: InputObjectType) {
     if (inputObject.hasChanged && !inputObject.isValid) {
@@ -61,4 +61,4 @@ function EmailPasswordForm({ handleAuth }: PropsType) {
   );
 }
 
-export default EmailPasswordForm;
+export default AuthForm;

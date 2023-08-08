@@ -1,11 +1,10 @@
 import axios from '../instance';
 import { TodosPayload } from '../../types/todoTypes';
 
-async function putTodosById({ id, todo, isCompleted }: TodosPayload) {
+async function createTodo({ todo }: TodosPayload) {
   try {
-    const { data } = await axios().put(`/todos/${id}`, {
+    const { data } = await axios().post('/todos', {
       todo,
-      isCompleted,
     });
     return data;
   } catch {
@@ -14,4 +13,4 @@ async function putTodosById({ id, todo, isCompleted }: TodosPayload) {
   }
 }
 
-export default putTodosById;
+export default createTodo;

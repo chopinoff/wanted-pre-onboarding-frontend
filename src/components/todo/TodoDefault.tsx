@@ -1,24 +1,24 @@
 import { Dispatch, SetStateAction } from 'react';
 import { TodosResult } from '../../types/todoTypes';
-import deleteTodosById from '../../api/todos/deleteTodosById';
+import deleteTodoById from '../../api/todo/deleteTodoById';
 
 interface Props extends TodosResult {
-  handleTodoList: () => Promise<void>;
-  handleIsModifying: Dispatch<SetStateAction<boolean>>;
+  getTodoList: () => Promise<void>;
+  setIsModifying: Dispatch<SetStateAction<boolean>>;
 }
 
-function TodoItemView({ id, todo, handleTodoList, handleIsModifying }: Props) {
+function TodoDefault({ id, todo, getTodoList, setIsModifying }: Props) {
   async function handleClickDelete() {
-    await deleteTodosById({ id });
-    handleTodoList();
+    await deleteTodoById({ id });
+    getTodoList();
   }
 
   function handleClickModify() {
-    handleIsModifying(true);
+    setIsModifying(true);
   }
 
   return (
-    <>
+    <label htmlFor="checkbox">
       <span>{todo}</span>
       <button data-testid="modify-button" type="button" onClick={handleClickModify}>
         수정
@@ -26,7 +26,7 @@ function TodoItemView({ id, todo, handleTodoList, handleIsModifying }: Props) {
       <button data-testid="delete-button" type="button" onClick={handleClickDelete}>
         삭제
       </button>
-    </>
+    </label>
   );
 }
-export default TodoItemView;
+export default TodoDefault;
