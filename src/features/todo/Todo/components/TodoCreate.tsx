@@ -23,7 +23,7 @@ function TodoCreate({ getTodoList }: Props) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input data-testid="new-todo-input" value={todo} onChange={handleChange} />
+        <input data-testid="new-todo-input" aria-label="new-todo-input" value={todo} onChange={handleChange} />
         <button data-testid="new-todo-add-button">추가</button>
       </form>
     </div>

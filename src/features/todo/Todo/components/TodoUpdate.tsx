@@ -30,7 +30,7 @@ function TodoUpdate({ id, todo: initialTodo, isCompleted, getTodoList, setIsModi
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input data-testid="modify-input" value={todo} onChange={handleChange} />
+        <input data-testid="modify-input" aria-label="modify-input" value={todo} onChange={handleChange} />
         <button data-testid="submit-button" type="submit">
           제출
         </button>

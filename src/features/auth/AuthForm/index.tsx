@@ -43,9 +43,21 @@ function AuthForm({ handleAuth }: PropsType) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input data-testid="email-input" name="email" value={email.value} onChange={email.handleChange} />
+        <input
+          data-testid="email-input"
+          aria-label="email-input"
+          name="email"
+          value={email.value}
+          onChange={email.handleChange}
+        />
         {handleWarning(email) && <p>유효하지 않은 이메일 형식입니다. 다시 확인해주세요.</p>}
-        <input data-testid="password-input" name="password" value={password.value} onChange={password.handleChange} />
+        <input
+          data-testid="password-input"
+          aria-label="password-input"
+          name="password"
+          value={password.value}
+          onChange={password.handleChange}
+        />
         {handleWarning(password) && <p>비밀번호를 8자리 이상 입력해주세요.</p>}
         {pathname === '/signup' ? (
           <button data-testid="signup-button" disabled={handleDisabled()}>
