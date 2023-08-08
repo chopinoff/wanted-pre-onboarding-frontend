@@ -1,18 +1,13 @@
-import { Routes, Route } from 'react-router-dom';
-import PageHome from './pages/PageHome';
-import PageSignUp from './pages/PageSignUp';
-import PageSignIn from './pages/PageSignIn';
-import PageTodo from './pages/PageTodo';
+import { Global } from '@emotion/react';
+import reset from 'styles/reset';
+import global from 'styles/global';
+import Routes from 'routes/RoutesApp';
 
 function App() {
   return (
     <div>
-      <Routes>
-        <Route path="/" element={<PageHome />} />
-        <Route path="/signup" element={<PageSignUp />} />
-        <Route path="/signin" element={<PageSignIn />} />
-        <Route path="/todo" element={<PageTodo />} />
-      </Routes>
+      <Global styles={[reset, global]} />
+      <Routes />
     </div>
   );
 }
