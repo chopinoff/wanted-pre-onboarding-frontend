@@ -33,7 +33,7 @@ function Todo() {
     <div>
       <TodoHeader />
       <TodoCreate {...{ getTodoList }} />
-      <TodoList {...{ getTodoList, todoList }} />
+      <TodoList {...{ todoList, getTodoList, setTodoList }} />
     </div>
   );
 }
