@@ -8,14 +8,13 @@ interface Props extends TodosResult {
   getTodoList: () => Promise<void>;
 }
 
-function TodoItem({ id, todo, isCompleted: initialIsCompleted, getTodoList }: Props) {
-  const [isCompleted, setIsCompleted] = useState(initialIsCompleted);
+function TodoItem({ id, todo, isCompleted, getTodoList }: Props) {
   const [isModifying, setIsModifying] = useState(false);
 
-  function handleClickCheckbox(event: ChangeEvent<HTMLInputElement>) {
+  async function handleClickCheckbox(event: ChangeEvent<HTMLInputElement>) {
     const checked = event.target.checked;
-    setIsCompleted(checked);
-    updateTodoById({ todo, isCompleted: checked, id });
+    await updateTodoById({ todo, isCompleted: checked, id });
+    getTodoList();
   }
 
   return (
