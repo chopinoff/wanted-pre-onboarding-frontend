@@ -4,9 +4,9 @@ import { TodosResult } from 'types/todoTypes';
 import TodoSelectDelete from './TodoSelectDelete';
 
 interface Props {
-  todoList: TodosResult[] | undefined;
+  todoList: TodosResult[];
   getTodoList: () => Promise<void>;
-  setTodoList: Dispatch<SetStateAction<TodosResult[] | undefined>>;
+  setTodoList: Dispatch<SetStateAction<TodosResult[]>>;
 }
 
 function TodoList({ todoList, getTodoList, setTodoList }: Props) {

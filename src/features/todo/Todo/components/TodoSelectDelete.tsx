@@ -1,20 +1,31 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import updateTodoById from 'api/todo/updateTodoById';
+import deleteTodoById from 'api/todo/deleteTodoById';
 import { TodosResult } from 'types/todoTypes';
 
 interface Props {
-  todoList: TodosResult[] | undefined;
-  setTodoList: Dispatch<SetStateAction<TodosResult[] | undefined>>;
+  todoList: TodosResult[];
+  setTodoList: Dispatch<SetStateAction<TodosResult[]>>;
 }
 
 function TodoSelectDelete({ todoList, setTodoList }: Props) {
   const [isChecked, setIsChecked] = useState(false);
 
-  async function updateTotalTodos(isChecked: boolean) {
-    if (todoList) {
-      const promises = todoList.map(({ todo, id }) => updateTodoById({ todo, isCompleted: isChecked, id }));
-      await Promise.all(promises);
-    }
+  function updateAllTodos(isChecked: boolean) {
+    todoList?.map(({ todo, id }) => updateTodoById({ todo, isCompleted: isChecked, id }));
+  }
+
+  function deleteCompletedTodos(completedIds: number[]) {
+    completedIds?.map((id) => deleteTodoById({ id }));
+  }
+
+  function filterAndExtractIds() {
+    const completedIds: number[] = [];
+    const newTodoList = todoList.filter(({ isCompleted, id }) => {
+      isCompleted && completedIds.push(id);
+      return !isCompleted;
+    });
+    return { completedIds, newTodoList };
   }
 
   function handleClickCheckbox() {
@@ -22,15 +33,30 @@ function TodoSelectDelete({ todoList, setTodoList }: Props) {
       return { ...todo, isCompleted: !isChecked };
     });
     setTodoList(newTodoList);
-    setIsChecked(!isChecked);
-    updateTotalTodos(!isChecked);
+    updateAllTodos(!isChecked);
   }
+
+  function handleClickDelete() {
+    const { completedIds, newTodoList } = filterAndExtractIds();
+    setTodoList(newTodoList);
+    deleteCompletedTodos(completedIds);
+  }
+
+  function isAllCompleted() {
+    if (todoList.length > 0) {
+      return todoList.every(({ isCompleted }) => isCompleted);
+    } else return false;
+  }
+
+  useEffect(() => {
+    setIsChecked(isAllCompleted());
+  }, [todoList]);
 
   return (
     <div>
       <input type="checkbox" id="checkbox-total" checked={isChecked} onChange={handleClickCheckbox} />
-      <label htmlFor="checkbox-total">전체 체크</label>
-      <button>완료 목록 삭제</button>
+      <label htmlFor="checkbox-total">{isChecked ? '전체 완료 해제' : '전체 완료'}</label>
+      <button onClick={handleClickDelete}>완료 목록 삭제</button>
     </div>
   );
 }

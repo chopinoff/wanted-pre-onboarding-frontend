@@ -9,7 +9,7 @@ import { TodosResult } from 'types/todoTypes';
 function Todo() {
   const accessToken = window.localStorage.getItem('accessToken');
   const navigate = useNavigate();
-  const [todoList, setTodoList] = useState<TodosResult[] | undefined>();
+  const [todoList, setTodoList] = useState<TodosResult[]>([]);
 
   const getTodoList = useCallback(async () => {
     const data = await getTodos();
