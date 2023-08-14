@@ -126,6 +126,19 @@ function reset() {
       border-collapse: collapse;
       border-spacing: 0;
     }
+    a {
+      cursor: pointer;
+      text-decoration: none;
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+    input {
+      border: none;
+      background: none;
+    }
   `;
 }
 

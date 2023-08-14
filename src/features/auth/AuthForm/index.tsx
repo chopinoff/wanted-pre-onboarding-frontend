@@ -1,6 +1,6 @@
 import { FormEvent } from 'react';
 import { useLocation } from 'react-router-dom';
-import useAuthValidation from './hooks/useAuthValidation';
+import useAuthValidation from '../../../hooks/useAuthValidation';
 import { AuthPayload } from 'types/authTypes';
 
 interface InputObjectType {
