@@ -1,37 +1,18 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { ThemeContext } from 'App';
+import React from 'react';
+import { css } from '@emotion/react';
+import MobileNavBar from './components/MobileNavBar';
+import BasicNavBar from './components/BasicNavBar';
+import useResponsive, { IsResponsive } from 'hooks/useResponsive';
 
 function NavBar() {
-  const navigate = useNavigate();
-  const [accessToken, setAccessToken] = useState<string | null>(window.localStorage.getItem('accessToken'));
-  const { dataTheme, onChangeDataTheme } = useContext(ThemeContext);
-
-  function handleClickLogout() {
-    window.localStorage.removeItem('accessToken');
-  }
-
-  useEffect(() => {
-    setAccessToken(window.localStorage.getItem('accessToken'));
-  }, [navigate]);
-
-  return (
-    <header>
-      <nav>
-        <h1>Wanted ToDo</h1>
-        <Link to="/todo">Todo</Link>
-        {accessToken ? (
-          <Link to="/" onClick={handleClickLogout}>
-            Logout
-          </Link>
-        ) : (
-          <Link to="/signin">Login</Link>
-        )}
-        <button onClick={onChangeDataTheme}>gg</button>
-        {dataTheme}
-      </nav>
-    </header>
-  );
+  const { isMobile } = useResponsive();
+  return <header css={headerContainer({ isMobile })}>{isMobile ? <MobileNavBar /> : <BasicNavBar />}</header>;
 }
+
+const headerContainer = ({ isMobile }: IsResponsive) => css`
+  position: fixed;
+  ${isMobile ? 'bottom : 0;' : 'top : 0;'}
+  width: 100%;
+`;
 
 export default NavBar;
