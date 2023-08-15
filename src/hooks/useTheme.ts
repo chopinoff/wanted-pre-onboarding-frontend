@@ -12,7 +12,7 @@ function useTheme() {
 
   useLayoutEffect(() => {
     const savedTheme = localStorage.getItem('dataTheme');
-    if (savedTheme && ['dark', 'light'].includes(savedTheme)) {
+    if (savedTheme) {
       setTheme(savedTheme);
       document.documentElement.setAttribute('data-theme', savedTheme);
     }

@@ -139,6 +139,9 @@ function reset() {
       border: none;
       background: none;
     }
+    * {
+      box-sizing: border-box !important;
+    }
   `;
 }
 
