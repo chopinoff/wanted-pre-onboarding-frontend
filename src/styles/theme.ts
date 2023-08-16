@@ -8,11 +8,11 @@ function theme() {
       --mainOp2: #03c18430;
       --text: #090a0d;
       --text2: #121319;
-      --text3: #1b1d25;
-      --textOp: #090a0d30;
-      --bd: #bcc0cf;
+      --text3: #676767;
+      --textOp: #090a0d50;
+      --bd: #c8c9c9;
       --bd2: #d8dbe7;
-      --bg: #f5f7ff;
+      --bg: #ffffff;
       --bg2: #eeeff5;
       --bg3: #d0d2dc;
       --bgOp: #d8dbe7ee;
@@ -28,7 +28,7 @@ function theme() {
       --text: #fff;
       --text2: #e6e9f3;
       --text3: #d8dbe7;
-      --textOp: #ffffff30;
+      --textOp: #ffffff50;
       --bd: #2e313d;
       --bd2: #1b1d25;
       --bg: #090a0d;

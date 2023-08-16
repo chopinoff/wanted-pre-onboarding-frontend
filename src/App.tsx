@@ -35,9 +35,11 @@ function App() {
 }
 
 const routeContainer = ({ isDeskTop, isTablet }: IsResponsive) => css`
-  padding: ${isDeskTop ? '80px 40px' : isTablet ? '80px 20px' : '20px'};
+  position: relative;
+  padding: ${isDeskTop ? '120px 40px 40px' : isTablet ? '110px 20px 20px' : '20px'};
   margin: 0 auto;
   max-width: 1140px;
+  min-height: 100vh;
 `;
 
 export default App;
