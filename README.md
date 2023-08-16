@@ -20,8 +20,12 @@ npm start
 
 ## 데모 영상
 
-<img src="./readme_images/녹화_2023_08_16_22_43_18_465.gif" width="80%">
-<img src="./readme_images/녹화_2023_08_16_22_44_15_585.gif" width="80%">
+<img src="./readme_images/01.gif">
+<img src="./readme_images/02.gif">
+<img src="./readme_images/03.gif">
+<img src="./readme_images/04.gif">
+<img src="./readme_images/05.gif">
+<img src="./readme_images/06.gif">
 
 # Getting Started with Create React App
 
