@@ -14,7 +14,7 @@
 ## 실행 방법
 
 ```
-git clone
+git clone https://github.com/chopinoff/wanted-pre-onboarding-frontend.git
 
 cd todo-app
 
@@ -23,15 +23,15 @@ npm start
 
 ## 데모 영상
 
-- 데모 영상은 모두 배포 환경에서 녹화되었습니다
+데모 영상은 모두 배포 환경에서 녹화되었습니다
 
 ### 1. 로그인 / 회원가입 (Assignment 1, 2, 3, 4)
 
 - 회원가입과 로그인 페이지에 이메일과 비밀번호의 유효성 검사기능 구현
 
-- 회원가입이 정상적으로 완료되었을 시 /signin 경로로 이동
+- 회원가입이 정상적으로 완료되었을 시 `/signin` 경로로 이동
 
-- 로그인이 정상적으로 완료되었을 시 /todo 경로로 이동
+- 로그인이 정상적으로 완료되었을 시 `/todo` 경로로 이동
 
   <img src="./readme-images/01.gif">
 
