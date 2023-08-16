@@ -37,7 +37,7 @@ function App() {
 const routeContainer = ({ isDeskTop, isTablet }: IsResponsive) => css`
   padding: ${isDeskTop ? '80px 40px' : isTablet ? '80px 20px' : '20px'};
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1140px;
 `;
 
 export default App;

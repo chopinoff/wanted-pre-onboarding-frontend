@@ -137,6 +137,7 @@ function reset() {
     }
     input {
       border: none;
+      outline: none;
       background: none;
     }
     * {

@@ -66,7 +66,7 @@ const navContainer = ({ isDeskTop }: IsResponsive) => css`
   display: grid;
   justify-content: space-between;
   grid-template-columns: 1fr auto;
-  max-width: 1200px;
+  max-width: 1140px;
   height: 80px;
   margin: 0 auto;
   padding: ${isDeskTop ? '20px 40px' : '10px 20px'};
