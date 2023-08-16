@@ -150,6 +150,7 @@ const buttonContainer = ({
   }
   & svg {
     font-size: 1.2em;
+    margin: auto auto;
   }
 `;
 

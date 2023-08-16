@@ -16,7 +16,7 @@ function Input({ width, height, bgColor, bdColor, fcBdColor, ...inputProps }: Pr
 const inputContainer = ({ width, height, bgColor, bdColor, fcBdColor }: Props) => css`
   width: ${width ? width : 'auto'};
   height: ${height ? height : '50px'};
-  padding: 0 10px;
+  padding: 0 14px;
   ${bdColor && `border : 1px solid ${bdColor};`}
   border-radius: 5px;
   background-color: ${bgColor ? bgColor : 'var(--bg)'};
