@@ -1,3 +1,28 @@
+# Wanted To Do
+
+## 지원자 정보
+
+- 이름 : 김현영
+
+## 배포 링크
+
+-
+
+## 실행 방법
+
+```
+git clone
+
+cd todo-app
+
+npm start
+```
+
+## 데모 영상
+
+<img src="./readme_images/녹화_2023_08_16_22_43_18_465.gif" width="80%">
+<img src="./readme_images/녹화_2023_08_16_22_44_15_585.gif" width="80%">
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
