@@ -73,6 +73,7 @@ const popUpContainer = (popUpOpen: boolean) => css`
   height: 120px;
   bottom: ${popUpOpen ? '60px' : '-60px'};
   transition: all 0.5s;
+  background-color: var(--bgColor);
 `;
 
 export default MobileNavPopUp;
