@@ -15,8 +15,14 @@ function TodoHeader({ count, all }: Props) {
     <header css={headerContainer({ isMobile })}>
       <h2>To Do List</h2>
       <div>
-        <span>{all}</span>개의 할 일 중 &nbsp;&nbsp;<span>{count}</span>
-        개를 완료했어요!
+        {all > 0 ? (
+          <>
+            <span>{all}</span>개의 할 일 중 &nbsp;&nbsp;<span>{count}</span>
+            개를 완료했어요!
+          </>
+        ) : (
+          '할 일을 작성하고 계획을 관리해보세요!'
+        )}
       </div>
       <img src={TodoListIcon} />
     </header>
