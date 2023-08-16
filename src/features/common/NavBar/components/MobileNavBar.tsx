@@ -10,12 +10,12 @@ function MobileNavBar() {
   const [popUpOpen, setPopUpOpen] = useState(false);
 
   function handleClickHome() {
-    setPopUpOpen(!popUpOpen);
+    setPopUpOpen(false);
     navigate('/');
   }
 
   function handleClickTodo() {
-    setPopUpOpen(!popUpOpen);
+    setPopUpOpen(false);
     navigate('/todo');
   }
 
