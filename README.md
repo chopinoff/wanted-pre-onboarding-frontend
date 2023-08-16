@@ -20,12 +20,12 @@ npm start
 
 ## 데모 영상
 
-<img src="./readme_images/01.gif">
-<img src="./readme_images/02.gif">
-<img src="./readme_images/03.gif">
-<img src="./readme_images/04.gif">
-<img src="./readme_images/05.gif">
-<img src="./readme_images/06.gif">
+<img src="./readme-images/01.gif">
+<img src="./readme-images/02.gif">
+<img src="./readme-images/03.gif">
+<img src="./readme-images/04.gif">
+<img src="./readme-images/05.gif">
+<img src="./readme-images/06.gif">
 
 # Getting Started with Create React App
 
