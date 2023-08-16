@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 import { RiErrorWarningLine } from 'react-icons/ri';
 import useAuthValidation from '../../../hooks/useAuthValidation';
 import { AuthPayload } from 'types/authTypes';
-import { ReactComponent as Logo } from 'assets/images/logo.svg';
+import { ReactComponent as Logo } from 'assets/images/logo-fin.svg';
 import useResponsive, { IsResponsive } from 'hooks/useResponsive';
 import Input from 'features/common/Input';
 import Button from 'features/common/Button';
@@ -81,7 +81,7 @@ function AuthForm({ handleAuth }: PropsType) {
           data-testid="password-input"
           aria-label="password-input"
           autoComplete="off"
-          type="text"
+          type="password"
           name="password"
           value={password.value}
           placeholder="비밀번호를 입력해주세요"
@@ -150,7 +150,6 @@ const formContainer = ({ isDeskTop }: IsResponsive) => css`
   border-radius: 10px;
   padding: ${isDeskTop ? '60px 40px' : '50px 20px'};
   background-color: var(--bg);
-  box-shadow: 0px 5px 15px 0px var(--shadow);
   & form {
     display: flex;
     flex-direction: column;
@@ -171,12 +170,12 @@ const logoContainer = ({ isDeskTop }: IsResponsive) => css`
   display: flex;
   align-items: center;
   height: 40px;
-  max-width: ${isDeskTop ? '180px' : '140px'};
+  max-width: ${isDeskTop ? '100px' : '70px'};
   margin: 0 0 30px;
   & svg {
     width: 100%;
     height: fit-content;
-    fill: var(--text);
+    fill: var(--main);
   }
 `;
 
