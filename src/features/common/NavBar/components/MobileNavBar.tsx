@@ -49,7 +49,6 @@ const NavBarContainer = () => css`
   grid-template-columns: repeat(3, 1fr);
   height: 60px;
   background-color: var(--bg);
-  box-shadow: 0px -5px 10px 0px var(--shadow);
   & * {
     margin: auto auto;
   }

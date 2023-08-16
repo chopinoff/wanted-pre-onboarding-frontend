@@ -5,7 +5,7 @@ import useResponsive, { IsResponsive } from 'hooks/useResponsive';
 import { RiCheckboxCircleFill, RiCheckboxCircleLine } from 'react-icons/ri';
 import Button from 'features/common/Button';
 import ThemeButton from './ThemeButton';
-import { ReactComponent as Logo } from 'assets/images/logo.svg';
+import { ReactComponent as Logo } from 'assets/images/logo-fin.svg';
 
 function BasicNavBar() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ function BasicNavBar() {
 
   function handleClickLogout() {
     window.localStorage.removeItem('accessToken');
-    navigate('/');
+    navigate('/signin');
   }
 
   function handleClickLogin() {
@@ -50,7 +50,7 @@ function BasicNavBar() {
         <Button
           {...{
             text: 'To Do',
-            hvColor: '#090a0d',
+            hvColor: '#fff',
             hvBgColor: 'var(--main)',
             Icon: RiCheckboxCircleFill,
             HvIcon: RiCheckboxCircleLine,
@@ -76,12 +76,12 @@ const logoContainer = ({ isDeskTop }: IsResponsive) => css`
   display: flex;
   align-items: center;
   height: 40px;
-  max-width: ${isDeskTop ? '220px' : '140px'};
+  max-width: ${isDeskTop ? '100px' : '80px'};
   margin: auto 0;
   & svg {
     width: 100%;
     height: fit-content;
-    fill: var(--text);
+    fill: var(--main);
   }
 `;
 
