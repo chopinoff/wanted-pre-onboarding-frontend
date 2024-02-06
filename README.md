@@ -1,6 +1,7 @@
 # Wanted To Do
 
-<img src="./readme-images/logo.png">
+<img src="https://github.com/chopinoff/wanted-pre-onboarding-frontend/assets/107768516/b15daa2e-f7aa-43af-b2de-091a14e95bd0">
+<br>
 <br>
 
 ## 지원자 이름
