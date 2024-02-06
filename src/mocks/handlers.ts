@@ -7,7 +7,7 @@ const BASE_API_URL = process.env.REACT_APP_API_BASE_URL;
 export const handlers = [
   http.post(`${BASE_API_URL}auth/signup`, async ({ request }) => {
     const newAuth = (await request.json()) as { email: string; password: string };
-    console.log(newAuth);
+    // console.log(newAuth);
     if (!people.some((obj) => obj.email === newAuth.email)) {
       people.push({
         userId: people.length + 1,
