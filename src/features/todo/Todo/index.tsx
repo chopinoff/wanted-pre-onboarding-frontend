@@ -16,6 +16,7 @@ function Todo() {
   const getTodoList = useCallback(async () => {
     const data = await getTodos();
     if (data !== null) {
+      console.log(data);
       setTodoList(data);
     }
   }, []);

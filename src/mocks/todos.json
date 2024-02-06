@@ -1,0 +1,5 @@
+[
+  { "userId": 1, "id": 1, "isCompleted": false, "todo": "다크모드 테스트 해보기" },
+  { "userId": 1, "id": 2, "isCompleted": false, "todo": "반응형 (PC, 태블릿, 모바일) 테스트 해보기" },
+  { "userId": 1, "id": 3, "isCompleted": false, "todo": "WTD 재배포하기" }
+]
