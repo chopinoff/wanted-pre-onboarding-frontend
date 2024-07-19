@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React, { createContext, useEffect } from 'react';
 import { Global, css } from '@emotion/react';
 import reset from 'styles/reset';
 import global from 'styles/global';
@@ -20,6 +20,11 @@ export const ThemeContext = createContext(defaultValue);
 function App() {
   const { isDeskTop, isTablet } = useResponsive();
   const { dataTheme, onChangeDataTheme } = useTheme();
+
+  useEffect(() => {
+    const accounts = { 'test@': '12341234' };
+    localStorage.setItem('accounts', JSON.stringify(accounts));
+  }, []);
 
   return (
     <div>
